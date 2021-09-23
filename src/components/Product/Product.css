@@ -1,0 +1,30 @@
+.layout {
+    display: flex;
+}
+.layout3 {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.products-container {
+    border-right: 1px solid gray;
+    margin-right: 20px;
+}
+
+.btn {
+    background-color: goldenrod;
+    padding: 5px 25px;
+    border: 1px solid gray;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.title {
+    color: blue;
+}
+
+.products-container {
+    text-align: left;
+    
+}

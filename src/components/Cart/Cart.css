@@ -1,0 +1,11 @@
+
+.btn {
+    background-color: goldenrod;
+    padding: 5px 25px;
+    border: 1px solid gray;
+    color: black;
+    border-radius: 5px;
+}
+.total-order{
+    color:#b12704
+}

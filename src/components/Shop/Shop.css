@@ -1,0 +1,11 @@
+.layout1 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+
+.products-container {
+    margin-left: 200px;
+    border-right: 1px solid gray;
+    margin-right: 20px;
+}
