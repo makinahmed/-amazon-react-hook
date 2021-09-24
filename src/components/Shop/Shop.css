@@ -9,3 +9,10 @@
     border-right: 1px solid gray;
     margin-right: 20px;
 }
+.input-field {
+    margin-top: -45px;
+}
+.input-field input {
+    width: 80%;
+    height: 25px;
+}

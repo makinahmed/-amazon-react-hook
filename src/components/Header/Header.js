@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {   faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../images/logo.jpg';
 import './Header.css';
 const Header = () => {
@@ -17,10 +15,7 @@ const Header = () => {
                         <li> <a href="/mangge">Manage Inventory</a></li>
                     </ul>
                 </nav>
-                <div className="input-field">
-                    <input type="text" name="" id="" />
-                    <FontAwesomeIcon icon={faShoppingCart} style={{'color':'white','fontSize': '30px','cursor':'pointer'}} />  
-                </div>
+
             </div>
         </div>
     );

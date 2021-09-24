@@ -9,7 +9,7 @@ const Features = (props) => {
 
 
                 {
-                    props.features.map(feature =><li>{feature.description}</li>)
+                    props.features.map(feature =><li key={feature.description}>{feature.description}</li>)
                 }
 
 
