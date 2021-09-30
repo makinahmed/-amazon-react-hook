@@ -25,30 +25,22 @@ const Shop = () => {
     }, [])
     useEffect(() => {
         let savedData = getStoredCart()
-
         if (products.length) {
             let newCart = []
             for (const data in savedData) {
                 let localStorageProduct = products.find(product => product.key === data)
-
                 localStorageProduct.quantity = savedData[data];
-                console.log(localStorageProduct, '   localStorage');
                 newCart.push(localStorageProduct)
             }
-
             setCarts(newCart)
-
         }
     }, [products])
 
     const handleInput = (e) => {
         let searchItem = e.target.value.toLowerCase()
-        // console.log(searchItem);
         const a = products.filter(product => product.name.toLowerCase().includes(searchItem))
-
         setDisplayProducts(a)
     }
-
     return (
         <div>
             <div className="input-field">
