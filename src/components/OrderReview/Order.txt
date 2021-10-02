@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getStoredCart } from '../../utilities/fakedb';
+import './OrderReview.css'
+import Cart from '../Cart/Cart';
+import Product from '../Product/Product';
+
+const OrderReview = () => {
+    const [products, setProducts] = useState([])
+    // const [a, setA] = useState([])
+    useEffect(() => {
+        fetch('/products.JSON')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+    const storedData = getStoredCart()
+    let arr = [];
+    if (products.length) {
+        for (const review in storedData) {
+            products.map(product => {
+                if (product.key === review) {
+                    arr.push(product)
+                }
+            })
+        }
+    }
+    return (
+        <div className="product-added">
+
+            <div>
+                {
+                    arr.map(product => <Product
+                        product={product}
+                    ></Product>)
+                }
+            </div>
+
+
+            <div>
+                {
+
+
+                    <Cart carts={arr}>
+                        <Link>
+                            <button className="btn">Click Here</button>
+                        </Link>
+                    </Cart>
+                }
+            </div>
+
+
+        </div>
+    );
+};
+
+export default OrderReview;

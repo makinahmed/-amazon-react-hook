@@ -3,28 +3,31 @@ import './Cart.css';
 
 const Cart = (props) => {
     const { carts } = props
-    let items = 0;
+    let quantity = 0;
     let total = 0;
-    let wholePrice = 0;
-    let totalBeforeTax = 20;
     let itemsPrice = 0;
-     for (const cart of carts) {
-        items = items + cart.quantity;
-        total = total + cart.price;
-        itemsPrice = cart.price;
-        wholePrice = (wholePrice * (cart.quantity || 1)) + Number.parseInt(cart.wholePrice);
+    if (carts.length) {
+        for (const cart of carts) {
+
+            total = total + ((cart.quantity) * cart.price);
+            itemsPrice = cart.price;
+            quantity = quantity + cart.quantity;
+        }
     }
+    let withtax = (total * 0.05) + total;
     return (
         <div>
             <h3>Order Summary</h3>
-            <p>Items Ordered:{items}  </p>
+            <p>Items Ordered:{quantity}  </p>
             <div>
-                <p>Items:<span>$</span>{itemsPrice.toFixed()} </p>
+                <p>Items:<span>$</span>{itemsPrice.toFixed()} </p>  {/* fixed */}
                 <p>Total Before Tax: <span>$</span>{total.toFixed()}</p>
-                <p>Estimate Tax: <span>$</span>{wholePrice}</p>
-                <h2 className="total-order">Order Total: <span>$</span>{(wholePrice + total + totalBeforeTax).toFixed()}</h2>
+                <p>Estimate Tax: <span>$</span>{withtax.toFixed()}</p>
+                <h2 className="total-order">  Total Price:<span>$</span>{withtax.toFixed()} </h2>
             </div>
-            <button className="btn">Review Your order</button>
+            {
+                props.children
+            }
         </div>
     );
 };
