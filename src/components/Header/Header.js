@@ -13,15 +13,15 @@ const Header = () => {
             <div className="navigation">
                 <nav>
                     <ul className="list">
-                        <Link><a href="/shop">Shop</a></Link>
-                        <Link><a href="/order">Order Review</a></Link>
-                        <Link> <a href="/manage">Manage Inventory</a></Link>
+                        <li><a href="/shop">Shop</a></li>
+                        <li><a href="/order">Order Review</a></li>
+                        <li> <a href="/manage">Manage Inventory</a></li>
                        {user.email && <span style={{color: 'white'}}>Hello, {user.displayName} </span>}
                         {
                             user.email ?
-                                <Link to="/login"> <button onClick={logOut}>Log Out</button></Link> : <Link> <a
+                                <a href="/login"> <button onClick={logOut}>Log Out</button></a> : <a> <a
                                     
-                                    href="/login">Login</a></Link>
+                                    href="/login">Login</a></a>
 
 
                         }
