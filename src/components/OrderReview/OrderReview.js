@@ -12,9 +12,9 @@ const OrderReview = () => {
     const [cart, setCart] = useCart(products)
     const history = useHistory()
     const handleOrderPlace = () => {
-        // setCart([])
+        setCart([])
         history.push('/shipping')
-        // clearTheCart()
+        clearTheCart()
     }
     const handleRemove = id => {
         const rest = cart.filter(p => p.key !== id)
@@ -37,7 +37,7 @@ const OrderReview = () => {
                 {
                     <Cart carts={cart}>
 
-                        <button onClick={handleOrderPlace} className="btn">Proceed to Shipping</button>
+                        <button onClick={handleOrderPlace} className="btn">Place Order</button>
 
                     </Cart>
                 }

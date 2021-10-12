@@ -29,12 +29,12 @@ function App() {
             <Route path="/order">
               <OrderReview></OrderReview>
             </Route>
-            <PrivateRoute path="/manage">
+            <Route path="/manage">
               <ManageInventory></ManageInventory>
-            </PrivateRoute>
-            <Route path="/shipping">
-              <Shipping></Shipping>
             </Route>
+            <PrivateRoute path="/shipping">
+              <Shipping></Shipping>
+            </PrivateRoute>
             <Route path="/placeorder">
               <PlaceOrder></PlaceOrder>
             </Route>

@@ -15,13 +15,13 @@ const Header = () => {
                     <ul className="list">
                         <li><a href="/shop">Shop</a></li>
                         <li><a href="/order">Order Review</a></li>
-                        <li> <a href="/manage">Manage Inventory</a></li>
-                       {user.email && <span style={{color: 'white'}}>Hello, {user.displayName} </span>}
+                        <li><a href="/manage">Manage Inventory</a></li>
+                        {user.email && <span style={{ color: 'white' }}>Hello, {user.displayName} </span>}
                         {
                             user.email ?
-                                <a href="/login"> <button onClick={logOut}>Log Out</button></a> : <a> <a
-                                    
-                                    href="/login">Login</a></a>
+                                <a href="/login"> <button onClick={logOut}>Log Out</button></a> : <a
+
+                                    href="/login">Login</a>
 
 
                         }
