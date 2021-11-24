@@ -11,7 +11,9 @@ const Cart = (props) => {
 
             total = total + ((cart.quantity) * cart.price);
             itemsPrice = cart.price;
+          
             quantity = quantity + cart.quantity;
+            console.log(quantity.quantity);
         }
     }
     let withtax = (total * 0.05) + total;

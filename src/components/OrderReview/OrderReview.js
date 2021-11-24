@@ -14,7 +14,7 @@ const OrderReview = () => {
     const handleOrderPlace = () => {
         setCart([])
         history.push('/shipping')
-        clearTheCart()
+        // clearTheCart()
     }
     const handleRemove = id => {
         const rest = cart.filter(p => p.key !== id)

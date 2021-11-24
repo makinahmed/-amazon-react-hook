@@ -5,13 +5,13 @@ import Shop from './components/Shop/Shop';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import OrderReview from './components/OrderReview/OrderReview';
 import NotFound from './components/NotFound/NotFound';
-import ManageInventory from './components/ManageInventory/ManageInventory';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Shipping from './components/Shipping/Shipping';
+import Orders from './components/Orders/Orders';
 
 function App() {
   return (
@@ -29,8 +29,8 @@ function App() {
             <Route path="/order">
               <OrderReview></OrderReview>
             </Route>
-            <Route path="/manage">
-              <ManageInventory></ManageInventory>
+            <Route path="/orders">
+              <Orders></Orders>
             </Route>
             <PrivateRoute path="/shipping">
               <Shipping></Shipping>

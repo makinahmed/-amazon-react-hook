@@ -16,3 +16,14 @@
     width: 80%;
     height: 25px;
 }
+.pagination {
+    margin: 30px;
+}
+.pagination button {
+    padding: 0 10px;
+    margin-right: 20px;
+}
+
+.pagination .selected {
+    background-color: lightskyblue;
+}

@@ -15,7 +15,8 @@ const Header = () => {
                     <ul className="list">
                         <li><a href="/shop">Shop</a></li>
                         <li><a href="/order">Order Review</a></li>
-                        <li><a href="/manage">Manage Inventory</a></li>
+                      
+                        <li><a href="/orders">All Orders</a></li>
                         {user.email && <span style={{ color: 'white' }}>Hello, {user.displayName} </span>}
                         {
                             user.email ?

@@ -10,7 +10,9 @@ import useCart from '../Hoocks/useCart';
 const Shop = () => {
     const [products, setProducts] = useState([])
     const [displayProducts, setDisplayProducts] = useState([])
-    const [cart, setCart] = useCart(products)
+    const [cart, setCart] = useCart()
+    const [pageCount, setPageCount] = useState(0)
+    const [currentPage,setCurrentPage] = useState(0)
     const handleAddToCart = (product) => {
         let newCart = []
         const exist = cart.find(p => p.key === product.key)
@@ -26,13 +28,17 @@ const Shop = () => {
         setCart(newCart)
     }
     useEffect(() => {
-        fetch('/products.json')
+        fetch(`http://localhost:5000/products?currentPage=${currentPage}`)
             .then(res => res.json())
             .then(data => {
-                setProducts(data)
-                setDisplayProducts(data)
+                setProducts(data.products)
+                setDisplayProducts(data.products)
+                // console.log(data.products, '  data.products');
+                const count = data.count;
+                const pageNumber = Math.ceil(count / 10)
+                setPageCount(pageNumber)
             })
-    }, [])
+    }, [currentPage])
     const handleInput = (e) => {
         let searchItem = e.target.value.toLowerCase()
         const a = products.filter(product => product.name.toLowerCase().includes(searchItem))
@@ -53,6 +59,15 @@ const Shop = () => {
                             product={product}
                         ></Product>)
                     }
+                    <div className="pagination">
+                        {
+                            [...Array(pageCount).keys()].map(number => <button 
+                            className={number === currentPage ? 'selected' : ''}
+                            key={number}
+                            onClick={()=>setCurrentPage(number )}
+                            >{number +1}</button>)
+                        }
+                    </div>
                 </div>
                 <div>
                     <Cart carts={cart} >
